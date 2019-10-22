@@ -332,7 +332,7 @@ var _httpsMap = {
   }
 };
 var _ipCidr = [];
-var _proxyStr = "PROXY 127.0.0.1:1080; DIRECT;";
+var _proxyStr = "PROXY 127.0.0.1:12307; DIRECT;";
 var _direct = " DIRECT";
 
 function _checkRegexList(regexList, str) {
@@ -366,8 +366,8 @@ function _cidrToMask(bitCount) {
 }
 
 function _findProxy(urlMap, host, url, protoLen) {
-  if (_checkPatterns(urlMap.white, host, url, protoLen)) return _direct;
-  if (_checkPatterns(urlMap.proxy, host, url, protoLen)) return _proxyStr;
+  if (_checkPatterns(urlMap.white, host, url, protoLen)) return _proxyStr;
+  if (_checkPatterns(urlMap.proxy, host, url, protoLen)) return _direct;
   return false;
 }
 
@@ -376,7 +376,7 @@ function _findIP(host) {
     var ipParts = _ipCidr[i].split("/");
     var ip = ipParts[0];
     var mask = _cidrToMask(parseInt(ipParts[1], 10));
-    if (isInNet(dnsResolve(host), ip, mask)) return _proxyStr;
+    if (isInNet(dnsResolve(host), ip, mask)) return _direct;
   }
   return false;
 }
@@ -391,5 +391,5 @@ function FindProxyForURL(url, host) {
     proxyStr = _findProxy(_httpsMap, host, url, 8);
   }
 
-  return proxyStr || _findIP(host) || _direct;
+  return proxyStr || _findIP(host) || _proxyStr;
 }

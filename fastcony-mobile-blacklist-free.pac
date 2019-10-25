@@ -16,6 +16,7 @@ var _httpMap = {
       /^[^/]*\.api\.tv\.itc\.cn\//i,
       /^[^/]*\.letv\.cn\/vod\/v2\//i
     ],
+    "www.tianyancha.com": [/^\//i],
     "v.zhibo.tv": [/^\//i],
     "www.zhibo.tv": [/^\//i],
     "v.api.hunantv.com": [/^\//i, /^\/player\/video/i],
@@ -254,6 +255,7 @@ var _httpsMap = {
   },
   proxy: {
     any: [/^[^/]*\.video\.qq\.com\//i, /^[^/]*\.music\.126\.net\//i],
+    "www.tianyancha.com": [/^\//i],
     "pstream.api.mgtv.com": [/^\//i],
     "u.y.qq.com": [/^\//i],
     "dmd-fifajs-h5-ikuweb.youku.com": [/^\//i],
@@ -286,6 +288,7 @@ var _httpsMap = {
     "player.aplus.pptv.com": [/^\//i],
     "zb.s.qq.com": [/^\//i],
     "imgsa.baidu.com": [/^\//i],
+    "pan.baidu.com": [/^\//i, /^\/api\//i, /^\/rest\//i],
     "mips.kugou.com": [/^\//i],
     "pv.sohu.com": [/^\//i],
     "v.youku.com": [/^\//i],

@@ -333,8 +333,12 @@ var _httpsMap = {
 };
 var _ipCidr = [];
 // var _proxyStr = "PROXY 127.0.0.1:12307; DIRECT;";
-var _proxyStr = "DIRECT; SOCKS 127.0.0.1:57256;";
-var _direct = " SOCKS 127.0.0.1:57256";
+// var _proxyStr = "DIRECT; SOCKS 127.0.0.1:57256;";
+// var _direct = " DIRECT";
+// var _direct = "SOCKS 127.0.0.1:57256";
+
+var _direct = "DIRECT; SOCKS 127.0.0.1:57256;";
+var _proxyStr = "SOCKS 127.0.0.1:57256";
 
 function _checkRegexList(regexList, str) {
   if (str.slice(0, 4) === ":80/") str = str.slice(3);

@@ -12033,7 +12033,8 @@ var RULES = [
   ["IP-CIDR", "223.255.252.0/23", "Proxy"],
   ["FINAL", "Direct"]
 ];
-var PROXY = "SOCKS 127.0.0.1:57256; DIRECT;";
+var PROXY = "DIRECT; SOCKS 127.0.0.1:57256;";
+var DIRECT = "SOCKS 127.0.0.1:57256";
 
 if (!Array.prototype.indexOf) {
   Array.prototype.indexOf = function(elt /*, from */) {
@@ -12072,9 +12073,9 @@ function maskcidr(bitCount) {
 
 function usePlicy(policy) {
   if (policy === "Proxy") {
-    return "DIRECT";
+    return PROXY;
   }
-  return PROXY;
+  return DIRECT;
 }
 
 function FindProxyForURL(url, host) {
@@ -12105,5 +12106,5 @@ function FindProxyForURL(url, host) {
         return usePlicy(rule[1]);
     }
   }
-  return "DIRECT";
+  return DIRECT;
 }

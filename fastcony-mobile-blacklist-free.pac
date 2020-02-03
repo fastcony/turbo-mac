@@ -12033,7 +12033,7 @@ var RULES = [
   ["IP-CIDR", "223.255.252.0/23", "Proxy"],
   ["FINAL", "Direct"]
 ];
-var PROXY = "SOCKS5 127.0.0.1:57256; DIRECT;";
+var PROXY = "SOCKS 127.0.0.1:57256; DIRECT;";
 
 if (!Array.prototype.indexOf) {
   Array.prototype.indexOf = function(elt /*, from */) {

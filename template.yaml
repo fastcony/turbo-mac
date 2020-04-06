@@ -1,0 +1,13 @@
+data:
+  china:
+    hosts:
+      - value: "xxxx"
+        type: "domain/url/ip/cidr"
+        method: "http/https"
+        source: "turbo/malus/shadowsocks"
+  non-china:
+    hosts:
+      - value: "xxxx"
+        type: "domain/url/ip/cidr"
+        method: "http/https"
+        source: "turbo/malus/shadowsocks

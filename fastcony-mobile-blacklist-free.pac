@@ -1,4 +1,6 @@
 var RULES = [
+  ["IP-CIDR", "8.8.8.8/32", "Direct"],
+  ["IP-CIDR", "216.146.36.36/32", "Direct"],
   ["DOMAIN-SUFFIX", "getmalus.com", "Direct"],
   ["DOMAIN-SUFFIX", "google-analytics.com", "Direct"],
   ["DOMAIN-SUFFIX", "effect.douyin.com", "Proxy"],
